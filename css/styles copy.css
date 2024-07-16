@@ -1,0 +1,296 @@
+/* PALETA DE COLORES DE LA PÁGINA */
+:root {
+    --dark-spring-green: rgb(13, 74, 49);
+    --verde-oscuro: rgb(48, 112, 80);
+    --baby-powder: rgb(21, 40, 19);
+    --delete : rgb(211, 135, 20);
+    --color-texto : rgb(255,255,255);
+    --font-family: bold 16px "Ubuntu Sans", sans-serif;
+}
+/* ------------------------------ */
+
+/* ESTILOS GENERALES DE LA PÁGINA */
+* {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    box-sizing: border-box;
+    font: bold 16px "Ubuntu Sans", sans-serif;
+    color: var(--verde-oscuro);
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: var( bold 16px "Ubuntu Sans", sans-serif);
+    background-color: var(--verde-oscuro);
+}
+
+/* ------------------------------ */
+
+/* ESTILOS DEL HEADER */
+.header {
+    z-index: 1;
+    width: 100%;
+    background-color: var(--dark-spring-green);
+    padding: 1em;
+    justify-content: center;
+}
+
+.header div {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+    color: var(--verde-oscuro);
+}
+
+.header h1 {
+    font: 24px "Outfit", sans-serif;
+    color: var(--color-texto);
+    font-size: 24px;
+}
+
+.header i {
+    font-size: 1.5em;
+    color: var(--color-texto);
+}
+/* ------------------------------ */
+
+/* ESTILOS DEL MAIN */
+.container {
+    margin: auto;
+    width: 100%;
+}
+
+h2 {
+    margin: .5em;
+    font: 1.2em "Outfit", sans-serif;
+    color: var(--verde-oscuro);
+}
+
+/* ESTILOS DEL CARD CONTAINER */
+.product__container, .form__container {
+    width: 100%;
+    margin: auto;
+}
+
+.product__container {
+    min-width: 300px;
+    max-width: 900px;
+}
+
+.product__container__cards {
+    width: 90%;
+    height: 60vh;
+    overflow-y: scroll;
+    padding: .5em;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: .2em;
+}
+
+/* Estilos de card */
+.product__card {
+    height: 250px;
+    width: 230px;
+    margin: .5em;
+    background: color (var(--baby-powder));
+    filter: drop-shadow(0px 0px 10px var(--baby-powder));
+    border-radius: 5px 0;
+    padding: .5em;
+}
+
+.product__img {
+    width: 100%;
+    height: 70%;
+    object-fit: scale-down;
+    border-radius: 5px 0;
+}
+
+.product__name {
+    padding: .3em;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+.product__desc {
+    text-align: end;
+    margin: auto;
+    width: 90%;
+}
+
+.product__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: .3em;
+    background-color: transparent;
+    border: none;
+}
+
+.product__button i {
+    font-size: 1.5em;
+    color: var(--delete);
+}
+
+/* ------------------------------ */
+
+/* ESTILOS DEL CARD CONTAINER */
+.form__container {
+    margin-bottom: 1.5em;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+.form {
+    width: 90%;
+    background: linear-gradient(90deg, var(--verde-oscuro) 60%, var(--baby-powder));
+    filter: drop-shadow(0px 0px 3px var(--baby-powder));
+    margin: auto;
+    margin-bottom: 3em;
+    padding: 1em;
+    border-radius: 5px 0;
+}
+
+.form div {
+    width: 70%;
+    margin: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form button {
+    background-color: var(--orange);
+    color: var(--verde-oscuro);
+    font-style: italic;
+    padding: .4em;
+    border-radius: 5px 0;
+    border: none;
+}
+
+button[id="clear"] {
+    background-color: var(--baby-powder);
+    color: var(--orange);
+}
+
+label {
+    font-weight: bolder;
+}
+
+input {
+    width: 100%;
+    padding: .3em;
+    border-radius: 5px 0;
+    border: none;
+}
+
+/* ------------------------------ */
+
+/* ESTILOS DEL FOOTER */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: .5em;
+    background-color: var(--dark-spring-green);
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.footer__text{
+    margin: auto;
+    color: var(--color-texto);
+    font-family: var(--font-family);
+    font-weight: 14px;
+    font-weight:200;
+    font-size: 24px;
+    padding: 8px;
+}
+
+
+/* ------------------------------ */
+
+/* MEDIA QUERIES */
+@media (min-width: 400px) {
+    * {
+        font-size: 18px;
+    }
+    
+    .product__container__cards {
+        flex-flow: row wrap;
+    }
+}
+
+@media (min-width: 700px) {
+    * {
+        font-size: 20px;
+    }
+
+}
+
+@media (min-width: 1250px) {
+    .container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .product__container, .form__container {
+        width: 70%;
+        height: 100vh;
+    }
+
+    .form__container {
+        width: 30%;
+    }
+
+    .form {
+        height: 60%;
+    }
+}
+
+/* ------------------------------ */
+
+/* ESTILOS DE LAS PSEUDOCLASES */
+.product__card:hover {
+    filter: drop-shadow(0px 0px 10px var(--verde-oscuro));
+    transition: all .3s ease-in;
+}
+
+.product__button i:hover {
+    cursor: pointer;
+    transform: rotate(270deg);
+    transition: all .3s ease-in;
+}
+
+.form button:hover {
+    margin: 0 .5em;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 3px var(--orange));
+    transition: all .3s ease-in-out;
+}
+
+input:focus {
+    background-color: var(--night);
+    color: var(--verde-oscuro);
+}
+
+.footer__text a:hover {
+    cursor: pointer;
+    color: var(--verde-oscuro);
+    filter: drop-shadow(0px 0px 3px var(--orange));
+    transition: all .3s ease-in;
+}
+
+/* ------------------------------ */
